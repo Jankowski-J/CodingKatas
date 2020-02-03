@@ -53,7 +53,7 @@ namespace Baryka.MaitreD.BLL.Tests.Models
             var table = new Table(capacity);
             foreach (var existingReservation in existingReservations)
             {
-                table.Accept(reservation);
+                table.Accept(existingReservation);
             }
 
             // Act & Assert

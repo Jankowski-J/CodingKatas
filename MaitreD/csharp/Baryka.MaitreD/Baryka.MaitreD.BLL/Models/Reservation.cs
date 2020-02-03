@@ -6,5 +6,10 @@ namespace Baryka.MaitreD.BLL.Models
     {
         public DateTime Date { get; set; }
         public uint Quantity { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Date)}: {Date}, {nameof(Quantity)}: {Quantity}";
+        }
     }
 }
