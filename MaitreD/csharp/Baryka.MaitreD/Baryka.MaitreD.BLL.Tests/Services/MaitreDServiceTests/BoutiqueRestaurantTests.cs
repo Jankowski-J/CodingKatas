@@ -11,9 +11,8 @@ namespace Baryka.MaitreD.BLL.Tests.Services.MaitreDServiceTests
     public class BoutiqueRestaurantTests
     {
         private MaitreDService _sut;
-        private const int BoutiqueCapacity = 12;
 
-        private static object[] BoutiqueCases = new[]
+        private static object[] BoutiqueCases =
         {
             new object[] { 12, new List<Reservation>(), new Reservation { Quantity = 1 }, true },
             new object[] { 12, new List<Reservation>(), new Reservation { Quantity = 13 }, false },
@@ -32,14 +31,12 @@ namespace Baryka.MaitreD.BLL.Tests.Services.MaitreDServiceTests
                 {
                     new Reservation { Quantity = 2, Date = new DateTime(2023, 9, 14) }
                 },
-                new Reservation { Quantity = 3, Date = new DateTime(2023, 9, 14) }, true
+                new Reservation { Quantity = 3, Date = new DateTime(2023, 9, 14) }, false
             },
             new object[]
             {
                 10, new List<Reservation>
                 {
-                    new Reservation { Quantity = 3, Date = new DateTime(2023, 9, 14) },
-                    new Reservation { Quantity = 2, Date = new DateTime(2023, 9, 14) },
                     new Reservation { Quantity = 3, Date = new DateTime(2023, 9, 14) }
                 },
                 new Reservation { Quantity = 3, Date = new DateTime(2023, 9, 14) }, false
@@ -51,7 +48,7 @@ namespace Baryka.MaitreD.BLL.Tests.Services.MaitreDServiceTests
                     new Reservation { Quantity = 2, Date = new DateTime(2023, 9, 15) }
                 },
                 new Reservation { Quantity = 3, Date = new DateTime(2023, 9, 14) }, true
-            },
+            }
         };
 
         [TestCaseSource(nameof(BoutiqueCases))]
